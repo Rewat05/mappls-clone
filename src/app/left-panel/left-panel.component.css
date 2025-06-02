@@ -1,0 +1,294 @@
+ :host {
+  position: absolute;
+  top: 20px;  
+  left: 20px; 
+  height: calc(100% - 0px); 
+  width: 300px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.top-section {
+  background-color: #ffffff;
+}
+
+.bottom-section{
+  padding: 12px;
+  background-color: #ffffff;
+  overflow-y: auto;
+  height: 700px;
+}
+
+
+.hamburger-btn {
+  font-size: 24px;
+  color: rgb(111, 109, 109);
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgb(237, 235, 235); /* Silver line on the right */
+}
+
+.action-btn {
+  background-color: #27b780; 
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-right: 8px; /* <-- This adds the gap on the right */
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+
+.location-btn {
+  background-color: #2163b5; 
+  color: white;
+  border: none;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  width: 48px;
+  height: 48px; /* Square shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+
+
+
+.quick-links-title, .about-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+
+.info-box {
+  background-color: #eafff3;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 0.8px solid #b8e5bf; 
+}
+
+.learn-more-btn {
+  margin-top: 10px;
+  background-color: #007b5e;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+
+.quick-link-card {
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+  
+}
+
+.quick-link-card:hover {
+  transform: translateY(-2px);
+}
+
+.yellow {
+  background-color: #fff8dc;
+  height: 210px;
+  border: 0.8px solid #f0e6b8; 
+}
+.pink {
+  background-color: #ffe4e1;
+  height: 210px;
+  border: 0.8px solid #f2c9c6; 
+}
+
+.blue {
+  background-color: #e0f0ff;
+  height: 210px;
+  border: 0.8px solid #bcd9ff;
+}
+
+.green {
+  background-color: #e6ffed;
+  height: 210px;
+  border: 0.8px solid #b8e5bf; 
+}
+
+.purple {
+  background-color: #f0e6ff;
+  height: 210px;
+  border: 0.8px solid #c9b8f2; 
+}
+
+.peach {
+  background-color: #ffe5d4;
+  height: 210px;
+  border: 0.8px solid #f2ccb8; 
+}
+
+/* .transparent-spacer {
+  height: 20px; 
+  background-color: transparent;
+} */
+
+.panel-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: calc(100% - 20px);
+  width: 400px;
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.panel-container.hidden {
+  transform: translateX(-100%);
+}
+
+.left-panel {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow-y: auto;
+  
+}
+
+/* The toggle button that stays near the edge of the sliding panel */
+.toggle-button {
+  position: absolute;
+  /* top: 13.7%; */
+  left: 380px; /* Panel width + spacing */
+  transform: translateY(210%);
+  z-index: 20;
+  background-color: #fffdfd;
+  color: rgb(209, 205, 205);
+  border: none;
+  border-radius: 0 6px 6px 0;
+  padding: 8px;
+  cursor: pointer;
+  transition: left 0.3s ease;
+  height: 40px;
+}
+
+/* Move toggle button to the edge when panel is hidden */
+.panel-container.hidden + .toggle-button {
+  left: 0; /* original left value of panel */
+}
+
+
+
+
+.input-icon-wrapper {
+  position: relative;
+  flex: 1; /* allows it to grow inside flex container like .top-bar */
+  height: 48px;
+}
+
+.input-icon-wrapper i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: gray;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.input-icon-wrapper input[type="text"] {
+  flex-grow: 1;
+  background-color: white;
+  color: black;
+  border: none;
+  outline: none;
+  padding: 10px 12px 10px 36px; /* left padding to avoid overlapping icon */
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 15px;
+  border-radius: 0; /* or set 8px if you want rounded corners */
+}
+
+.panel-header,
+.quick-links-title,
+.about-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  position: relative;
+  color: #000;
+  font-size: 18px;
+}
+
+
+.panel-header::after,
+.quick-links-title::after,
+.about-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #299457;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.panel-header-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+
+
+
+

@@ -1,0 +1,82 @@
+<div class="panel-container" [class.hidden]="!isVisible">
+  <div class="left-panel" >
+    <!-- <div class="top-section"> -->
+    <div class="top-bar">
+      <button class="hamburger-btn" aria-label="Menu">&#9776;</button>
+      <div class="input-icon-wrapper">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Place name, address, Map" [(ngModel)]="searchQuery" />
+      </div>
+      <!-- <input type="text" placeholder="Place name, address, Map" [(ngModel)]="searchQuery" /> -->
+      <button class="action-btn" aria-label="Go">
+        <i class="fa-solid fa-diamond-turn-right"></i>
+      </button>
+      <button class="location-btn" aria-label="Go">
+        <i class="fa-solid fa-location-dot"></i>
+      </button>
+
+    </div>
+    <!-- </div> -->
+
+    <!-- <div class="transparent-spacer"></div> -->
+
+    <div class="bottom-section">
+
+      <div class="panel-header-container" style="display: flex; align-items: center; justify-content: space-between;">
+        <h2 class="panel-header">Welcome to Mappls!</h2>
+        <button class="panel-header-btn" aria-label="Action">
+          <i class="fa-solid fa-share-nodes"></i>
+          
+        </button>
+
+      </div>
+
+      <div class="info-box">
+        <h3><strong>Mappls is India's own</strong></h3>
+        <p>Maps, Navigation, Road Safety, Travel, and Commerce App & Portal!</p>
+        <button class="learn-more-btn">Learn More</button>
+      </div>
+
+      <h3 class="quick-links-title">Mappls App Quick Links</h3>
+
+      <div class="quick-links-grid">
+
+        <div class="quick-link-card yellow" (click)="onCardClick('findNearby')">
+          <h4>Find Nearby</h4>
+          <p>Instant results on the map for anything you need</p>
+        </div>
+        <div class="quick-link-card pink" (click)="onCardClick('postOnMap')">
+          <h4>Post On Map</h4>
+          <p>Post about anything, road conditions and review places</p>
+        </div>
+        <div class="quick-link-card blue" (click)="onCardClick('addBusiness')">
+          <h4>Add a Business</h4>
+          <p>Add your business on Mappls for easy access!</p>
+        </div>
+        <div class="quick-link-card green" (click)="onCardClick('getMapplsPin')">
+          <h4>Get Mappls Pin</h4>
+          <p>Your unique 6-character digital address!</p>
+        </div>
+        <div class="quick-link-card purple" (click)="onCardClick('addPlace')">
+          <h4>Add a Place</h4>
+          <p>Is our map missing a place? Let us know here!</p>
+        </div>
+        <div class="quick-link-card peach" (click)="onCardClick('fixMap')">
+          <h4>Fix Map</h4>
+          <p>Point out map errors or missing information</p>
+        </div>
+      </div>
+
+      <h3 class="about-title">About Mappls MapmyIndia</h3>
+      <div class="info-box">
+        <p>Learn more about all of Mappls MapmyIndia Solutions & Company</p>
+        <button class="learn-more-btn">Learn More</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="toggle-button" (click)="togglePanel()">
+  <span *ngIf="isVisible">&#10094;</span> <!-- left arrow when visible -->
+  <span *ngIf="!isVisible">&#10095;</span> <!-- right arrow when hidden -->
+</button>

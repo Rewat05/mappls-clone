@@ -29,6 +29,7 @@
             "styles": [
               "src/styles.css"
             ],
+            
             "scripts": []
           },
           "configurations": {
@@ -88,6 +89,7 @@
               "src/styles.css"
             ],
             "scripts": []
+
           }
         }
       }
