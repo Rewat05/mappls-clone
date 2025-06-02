@@ -23,7 +23,7 @@ export class MapComponent implements OnInit {
       }
       const script = document.createElement('script');
       script.id = 'mapmyindia-script';
-      script.src = 'https://apis.mapmyindia.com/advancedmaps/v1/eaf710c72d5ce0c81b4a9f611bd31110/map_load?v=1.5';
+      script.src = 'https://apis.mapmyindia.com/advancedmaps/v1/YOUR_API_KEY/map_load?v=1.5';
       script.onload = () => {
         resolve(true);
       };
